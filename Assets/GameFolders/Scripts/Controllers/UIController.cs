@@ -9,6 +9,8 @@ public class UIController : MonoSingleton<UIController>
 {
     private EventData _eventData;
 
+    [SerializeField] private Joystick joystick;
+
     [Header("Panels")]
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject losePanel;
@@ -22,7 +24,7 @@ public class UIController : MonoSingleton<UIController>
         Singleton();
         _eventData = Resources.Load("EventData") as EventData;
     }
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +35,20 @@ public class UIController : MonoSingleton<UIController>
     void Update()
     {
         
+    }
+
+    public Vector2 GetJoystick()
+    {
+        return joystick.Direction;
+    }
+
+    public float GetHorizontal()
+    {
+        return joystick.Horizontal;
+    }
+
+    public float GetVertical()
+    {
+        return joystick.Vertical;
     }
 }
