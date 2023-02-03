@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 using GameAnalyticsSDK;
+using GameFolders.Scripts.General;
 
 public class GameManager : MonoSingleton<GameManager>
 {

@@ -1,16 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawWireSphere : MonoBehaviour
+namespace GameFolders.Scripts.Components
 {
-    [SerializeField] private Color color;
-    [SerializeField] private float radius;
-
-    private void OnDrawGizmos()
+    public class DrawWireSphere : MonoBehaviour
     {
-        Gizmos.color = color;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        [SerializeField] private Color color;
+        [SerializeField] private float radius;
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = color;
+            Gizmos.DrawWireSphere(transform.position, radius);
+        }
     }
 }

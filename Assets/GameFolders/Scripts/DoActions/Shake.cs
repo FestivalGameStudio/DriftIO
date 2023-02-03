@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
+using GameFolders.Scripts.General;
 
 [System.Serializable]
 public class Shake

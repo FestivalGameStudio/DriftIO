@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using GameFolders.Scripts.General;
 using UnityEngine.Events;
 
 [System.Serializable]

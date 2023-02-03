@@ -1,23 +1,41 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using GameFolders.Scripts.General;
 using UnityEngine;
 
-public class LineController : MonoBehaviour
+namespace GameFolders.Scripts.Controllers
 {
-    [SerializeField] private Transform ballTransform;
+    public class LineController : MonoBehaviour
+    {
+        [SerializeField] private Transform startTransform;
+        
+        private Transform _ballTransform;
+        private LineRenderer _lineRenderer;
+        private EventData _eventData;
     
-    private LineRenderer _lineRenderer;
+        private void Awake()
+        {
+            _lineRenderer = GetComponent<LineRenderer>();
+            _eventData = Resources.Load("EventData") as EventData;
+        }
 
-    private void Awake()
-    {
-        _lineRenderer = GetComponent<LineRenderer>();
-    }
+        private void OnEnable()
+        {
+            _eventData.OnAssignBallTransform += AssignBallTransform;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        _lineRenderer.SetPosition(0, transform.position);
-        _lineRenderer.SetPosition(1, ballTransform.position);
+        void Update()
+        {
+            _lineRenderer.SetPosition(0, startTransform.position);
+            _lineRenderer.SetPosition(1, _ballTransform.position);
+        }
+
+        private void OnDisable()
+        {
+            _eventData.OnAssignBallTransform -= AssignBallTransform;
+        }
+
+        private void AssignBallTransform(Transform ballTransform)
+        {
+            _ballTransform = ballTransform;
+        }
     }
 }
