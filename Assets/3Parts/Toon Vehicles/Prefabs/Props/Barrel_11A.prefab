@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   giveSpin: 0
+  useBlowUp: 0
+  useEffect: 1
   effectObject: {fileID: 920530954}
 --- !u!1001 &920449492
 PrefabInstance:

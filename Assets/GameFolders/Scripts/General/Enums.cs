@@ -30,4 +30,10 @@ namespace GameFolders.Scripts.General
         Update,
         LateUpdate
     }
+
+    public enum BelongsTo
+    {
+        Player,
+        Enemy
+    }
 }

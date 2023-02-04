@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using GameFolders.Scripts.General;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,34 +9,23 @@ using TMPro;
 
 public class UIController : MonoSingleton<UIController>
 {
-    private EventData _eventData;
-
     [SerializeField] private Joystick joystick;
-
-    [Header("Panels")]
-    [SerializeField] private GameObject victoryPanel;
-    [SerializeField] private GameObject losePanel;
-    
-    [Header("Buttons")]
-    [SerializeField] Button nextLevelButton;
-    [SerializeField] Button tryAgainButton;
+    [SerializeField] private TextMeshProUGUI playerScoreText;
+    [SerializeField] private TextMeshProUGUI enemyScoreText;
 
     private void Awake()
     {
         Singleton();
-        _eventData = Resources.Load("EventData") as EventData;
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        playerScoreText.transform.parent.DOScale(Vector3.one * 1.1f, 1f).SetEase(Ease.OutElastic)
+            .OnComplete(() => playerScoreText.transform.parent.DOScale(Vector3.one * 1, 0.2f));
+        enemyScoreText.transform.parent.DOScale(Vector3.one * 1.1f, 1f).SetEase(Ease.OutElastic)
+            .OnComplete(() => enemyScoreText.transform.parent.DOScale(Vector3.one * 1, 0.2f));
+        playerScoreText.text = $"{GameManager.Instance.PlayerScore}";
+        enemyScoreText.text = $"{GameManager.Instance.EnemyScore}";
     }
 
     public Vector2 GetJoystick()

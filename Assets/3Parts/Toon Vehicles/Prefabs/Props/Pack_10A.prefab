@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   giveSpin: 1
+  useBlowUp: 0
+  useEffect: 1
   effectObject: {fileID: 394410254}
 --- !u!54 &1785514322
 Rigidbody:
