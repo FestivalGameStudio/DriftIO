@@ -86,10 +86,16 @@ namespace GameFolders.Scripts.Controllers
         {
             if (!_canFollow) return;
 
-            SpeedUpdate();
             Follow();
         }
-        
+
+        private void Update()
+        {
+            if (!_canFollow) return;
+
+            SpeedUpdate();
+        }
+
         private void SpeedUpdate()
         {
             float distanceToPlayer = Vector3.Distance(transform.position, carTransform.position);
@@ -107,11 +113,11 @@ namespace GameFolders.Scripts.Controllers
 
         private void Follow()
         {
-            Vector3 newPosition = Vector3.Lerp(transform.position, ballReferenceTransform.position, Time.fixedDeltaTime * _followSpeed);
-            _rigidbody.DOMove(newPosition, Time.fixedDeltaTime);
+            Vector3 newPosition = Vector3.Lerp(transform.position, ballReferenceTransform.position, Time.deltaTime * _followSpeed);
+            _rigidbody.DOMove(newPosition, Time.deltaTime);
         }
 
-        private void Spin()
+        public void Spin()
         {
             if (!_canFollow)
             {
@@ -121,7 +127,7 @@ namespace GameFolders.Scripts.Controllers
 
             StartCoroutine(SpinCoroutine());
         }
-
+        
         private IEnumerator SpinCoroutine()
         {
             _canFollow = false;
@@ -133,11 +139,11 @@ namespace GameFolders.Scripts.Controllers
 
             while (_currentTime < duration)
             {
-                _currentTime += Time.fixedDeltaTime;
+                _currentTime += Time.deltaTime;
 
                 Vector3 angleDegreesPosition = Quaternion.AngleAxis(100 * spinSpeed * Time.deltaTime, Vector3.up) * (transform.position - carTransform.position);
                 Vector3 movePosition = carTransform.position + angleDegreesPosition;
-                _rigidbody.DOMove(movePosition, Time.fixedDeltaTime);
+                _rigidbody.DOMove(movePosition, Time.deltaTime);
 
                 yield return new WaitForFixedUpdate();
             }

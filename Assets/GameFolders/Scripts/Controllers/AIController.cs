@@ -20,6 +20,7 @@ namespace GameFolders.Scripts.Controllers
         [SerializeField] private Vector2 innerRangeChangeTime;
         [SerializeField] private float forcePower;
         [SerializeField] private LayerMask layerMask;
+        [SerializeField] private BounceBallController bounceBallController;
         
         private RandomTrailEmitter[] _wheelTrails;
         private Rigidbody _rigidbody;
@@ -46,6 +47,19 @@ namespace GameFolders.Scripts.Controllers
             _canMove = true;
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.TryGetComponent(out ExplodeObject explodeObject))
+            {
+                
+                if (explodeObject.GiveSpin)
+                {
+                    explodeObject.Explode(500, transform.position, transform.localScale.x);
+                    bounceBallController.Spin();
+                }
+            }
+        }
+        
         private void OnCollisionStay(Collision collision)
         {
             if (collision.gameObject.TryGetComponent(out CarController carController))

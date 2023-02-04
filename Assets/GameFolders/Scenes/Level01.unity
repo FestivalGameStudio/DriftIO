@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.14599563, g: 0.15928088, b: 0.3315792, a: 1}
+  m_IndirectSpecularColor: {r: 0.14590085, g: 0.1592837, b: 0.3316797, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -401,13 +401,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 974002604}
     m_Modifications:
+    - target: {fileID: 1019383139914740, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291337358986120, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1486880278589478, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
       propertyPath: m_Name
       value: Car_20B
       objectReference: {fileID: 0}
     - target: {fileID: 1486880278589478, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486880278589478, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520752741724844, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796708907959746, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4360983716225004, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
       propertyPath: m_RootOrder
@@ -624,7 +644,7 @@ GameObject:
   - component: {fileID: 192011610}
   - component: {fileID: 192011607}
   - component: {fileID: 192011611}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: AICar
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -702,6 +722,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  bounceBallController: {fileID: 593123235}
 --- !u!1001 &196206571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -865,7 +886,7 @@ GameObject:
   - component: {fileID: 233094190}
   - component: {fileID: 233094192}
   - component: {fileID: 233094191}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1117,7 +1138,7 @@ GameObject:
   - component: {fileID: 304428574}
   - component: {fileID: 304428576}
   - component: {fileID: 304428577}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BallCenter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1434,7 +1455,7 @@ GameObject:
   - component: {fileID: 361612639}
   - component: {fileID: 361612640}
   - component: {fileID: 361612641}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trail
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1894,7 +1915,7 @@ GameObject:
   - component: {fileID: 507510720}
   - component: {fileID: 507510722}
   - component: {fileID: 507510721}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerCar
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1945,6 +1966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forcePower: 25
+  bounceBallController: {fileID: 1429546174}
 --- !u!54 &507510721
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2040,7 +2062,7 @@ GameObject:
   - component: {fileID: 513897932}
   - component: {fileID: 513897933}
   - component: {fileID: 513897934}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trail (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2397,7 +2419,7 @@ GameObject:
   - component: {fileID: 593123235}
   - component: {fileID: 593123234}
   - component: {fileID: 593123233}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BounceBall
   m_TagString: EnemyBall
   m_Icon: {fileID: 0}
@@ -2468,10 +2490,10 @@ MonoBehaviour:
   speedCoefficientForDistance: 3
   minDistance: 2
   trailEffect: {fileID: 513343648}
-  duration: 2
+  duration: 3
   spinSpeed: 5
-  forceRange: {x: 500, y: 5000}
-  carForceRange: {x: 4000, y: 6000}
+  forceRange: {x: 500, y: 800}
+  carForceRange: {x: 500, y: 800}
 --- !u!23 &593123236
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2544,13 +2566,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613795785}
     m_Modifications:
+    - target: {fileID: 1000010742078008, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011688368720, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011875386148, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012359292784, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1000012818597654, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
       propertyPath: m_Name
       value: Car_6B
       objectReference: {fileID: 0}
     - target: {fileID: 1000012818597654, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012818597654, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014115018590, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014178062580, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4000010329005542, guid: ea4f38a9f8abb4215ad495ba77ba8301, type: 3}
       propertyPath: m_RootOrder
@@ -2666,7 +2716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 613795785}
   - component: {fileID: 613795786}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2730,7 +2780,7 @@ GameObject:
   - component: {fileID: 625106792}
   - component: {fileID: 625106791}
   - component: {fileID: 625106790}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BallCenter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2903,13 +2953,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 481658, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.193
+      objectReference: {fileID: 0}
+    - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
       propertyPath: InitialModule.startSize.minScalar
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
@@ -2918,6 +2988,10 @@ PrefabInstance:
     - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
       propertyPath: InitialModule.startSizeZ.minMaxState
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19861438, guid: e75cf0dba269ca24e943482d44f3011f, type: 3}
       propertyPath: InitialModule.startRotationX.minMaxState
@@ -3427,7 +3501,7 @@ GameObject:
   - component: {fileID: 746567357}
   - component: {fileID: 746567359}
   - component: {fileID: 746567358}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3620,8 +3694,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 613795785}
     m_Modifications:
     - target: {fileID: 1582361949046406, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582361949046406, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589863504817558, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1589863504817558, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_TagString
@@ -3632,6 +3714,10 @@ PrefabInstance:
       value: Car_20A
       objectReference: {fileID: 0}
     - target: {fileID: 1647723407109982, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647723407109982, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -3640,8 +3726,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1708676276822774, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708676276822774, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937339035821316, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1937339035821316, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_TagString
@@ -3844,7 +3938,7 @@ GameObject:
   - component: {fileID: 833670568}
   - component: {fileID: 833670570}
   - component: {fileID: 833670569}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4008,8 +4102,8 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 0
-  m_BlendUpdateMethod: 0
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -4278,13 +4372,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613795785}
     m_Modifications:
+    - target: {fileID: 1000010168607598, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010347501868, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010961213236, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011443840670, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011662236710, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011927608476, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012194293150, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012737426382, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013029619052, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013207879138, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
       propertyPath: m_Name
       value: Car_5B
       objectReference: {fileID: 0}
     - target: {fileID: 1000013207879138, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013207879138, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013211674162, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4000011883650772, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
       propertyPath: m_RootOrder
@@ -4356,13 +4494,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 974002604}
     m_Modifications:
+    - target: {fileID: 1000010168607598, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010347501868, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010961213236, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011443840670, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011662236710, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011927608476, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012194293150, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012737426382, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013029619052, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1000013207879138, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
       propertyPath: m_Name
       value: Car_5B
       objectReference: {fileID: 0}
     - target: {fileID: 1000013207879138, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013207879138, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013211674162, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4000011883650772, guid: 8a79b0d83c70440fab5852a1e2a76ff7, type: 3}
       propertyPath: m_RootOrder
@@ -4504,7 +4686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 974002604}
   - component: {fileID: 974002605}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4862,7 +5044,7 @@ GameObject:
   - component: {fileID: 1064686502}
   - component: {fileID: 1064686504}
   - component: {fileID: 1064686503}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Line
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5786,13 +5968,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613795785}
     m_Modifications:
+    - target: {fileID: 1209560726489972, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376379003039228, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1576303907653886, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
       propertyPath: m_Name
       value: Car_19A
       objectReference: {fileID: 0}
     - target: {fileID: 1576303907653886, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576303907653886, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604717798893050, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737318396462092, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918348891356896, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977328372324118, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4348093783413710, guid: 4bb99b07d9eaf43a49d76498f84b0007, type: 3}
       propertyPath: m_RootOrder
@@ -6004,7 +6214,7 @@ GameObject:
   - component: {fileID: 1386871460}
   - component: {fileID: 1386871462}
   - component: {fileID: 1386871461}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Line
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6149,7 +6359,7 @@ GameObject:
   - component: {fileID: 1389721720}
   - component: {fileID: 1389721722}
   - component: {fileID: 1389721721}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6447,7 +6657,7 @@ GameObject:
   - component: {fileID: 1429546174}
   - component: {fileID: 1429546175}
   - component: {fileID: 1429546179}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BounceBall
   m_TagString: BounceBall
   m_Icon: {fileID: 0}
@@ -6469,15 +6679,15 @@ MonoBehaviour:
   belongsTo: 0
   ballReferenceTransform: {fileID: 304428573}
   carTransform: {fileID: 507510719}
-  baseFollowSpeed: 1
+  baseFollowSpeed: 2
   maxFollowSpeed: 15
-  speedCoefficientForDistance: 3
+  speedCoefficientForDistance: 4
   minDistance: 2
   trailEffect: {fileID: 2145154559}
-  duration: 2
+  duration: 3
   spinSpeed: 5
-  forceRange: {x: 500, y: 5000}
-  carForceRange: {x: 3000, y: 5000}
+  forceRange: {x: 500, y: 800}
+  carForceRange: {x: 300, y: 800}
 --- !u!135 &1429546175
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6655,15 +6865,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -6676,6 +6890,10 @@ PrefabInstance:
     - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.5660378
+      objectReference: {fileID: 0}
+    - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 19988780, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: m_CastShadows
@@ -7422,8 +7640,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 974002604}
     m_Modifications:
     - target: {fileID: 1582361949046406, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582361949046406, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589863504817558, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1589863504817558, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_TagString
@@ -7434,6 +7660,10 @@ PrefabInstance:
       value: Car_20A
       objectReference: {fileID: 0}
     - target: {fileID: 1647723407109982, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647723407109982, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -7442,8 +7672,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1708676276822774, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708676276822774, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937339035821316, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1937339035821316, guid: 7a61e68c168bc4180a848eda768083b3, type: 3}
       propertyPath: m_TagString
@@ -8168,13 +8406,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613795785}
     m_Modifications:
+    - target: {fileID: 1019383139914740, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291337358986120, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1486880278589478, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
       propertyPath: m_Name
       value: Car_20B
       objectReference: {fileID: 0}
     - target: {fileID: 1486880278589478, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486880278589478, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520752741724844, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796708907959746, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4360983716225004, guid: e1adc4c44c377445a908aa0849e31d7f, type: 3}
       propertyPath: m_RootOrder
@@ -8269,7 +8527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1429546178}
-  updateType: 0
+  updateType: 1
   followSpeed: 50
 --- !u!4 &2145154561
 Transform:
