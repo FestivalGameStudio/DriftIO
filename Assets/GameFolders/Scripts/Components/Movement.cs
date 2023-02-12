@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace GameFolders.Scripts.Components
@@ -18,7 +19,8 @@ namespace GameFolders.Scripts.Components
         private float _vertical;
         private bool _canRotate;
         private float _forwardSpeed;
-        
+        private bool _canMove = true;
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -33,6 +35,8 @@ namespace GameFolders.Scripts.Components
 
         private void Update()
         {
+            if (!_canMove) return;
+
             _horizontal = UIController.Instance.GetHorizontal();
             _vertical = UIController.Instance.GetVertical();
             
@@ -50,6 +54,8 @@ namespace GameFolders.Scripts.Components
 
         private void FixedUpdate()
         {
+            if (!_canMove) return;
+
             Vector3 forward = transform.forward;
 
             _rigidbody.MovePosition(transform.position + forward * (_forwardSpeed * Time.deltaTime));
@@ -76,6 +82,20 @@ namespace GameFolders.Scripts.Components
                 {
                     _forwardSpeed += acceleration * Time.deltaTime;
                 }
+            }
+        }
+
+        public void LockMovement(float duration)
+        {
+            StartCoroutine(LockMovementCoroutine());
+            
+            IEnumerator LockMovementCoroutine()
+            {
+                _canMove = false;
+
+                yield return new WaitForSeconds(duration);
+
+                _canMove = true;
             }
         }
     }

@@ -13,10 +13,12 @@ namespace GameFolders.Scripts.Controllers
         [SerializeField] private BounceBallController bounceBallController;
 
         private Rigidbody _rigidbody;
+        private Movement _movement;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
+            _movement = GetComponent<Movement>();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -38,7 +40,7 @@ namespace GameFolders.Scripts.Controllers
             {
                 Vector3 direction = (transform.position - aiController.transform.position).normalized;
                 
-                aiController.ForceMove(-direction * forcePower);
+                aiController.ForceMove(direction * forcePower);
             }
 
             if (collision.gameObject.TryGetComponent(out ExplodeObject explodeObject))
@@ -62,6 +64,7 @@ namespace GameFolders.Scripts.Controllers
         {
             Vector3 direction = (transform.position - explosionPosition).normalized;
             _rigidbody.AddExplosionForce(force, transform.position + direction -Vector3.down, radius);
+            _movement.LockMovement(force/500);
         }
     }
 }
